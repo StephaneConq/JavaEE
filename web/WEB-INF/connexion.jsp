@@ -11,14 +11,15 @@
 
 <!--// DBConnexion Bean-->
 <!--//Coded'initialisation//-->
-<jsp:useBeanid="dbcnx" class="beans.DBConnexion">
-
-</jsp:useBean>
-<!--// DBLien Bean -->
-<jsp:useBean id="dblien" class="beans.DBLien"/>
+<jsp:useBean id="bd" class="beans.DBConnexion" />
+<jsp:setProperty name="bd" property="login" value="p1503670" />
+<jsp:setProperty name="bd" property="password" value="241429" />
+<jsp:setProperty name="bd" property="port" value="3306" />
+<jsp:setProperty name="bd" property="hostname" value="iutdoua-web.univ-lyon1.fr" />
+<jsp:setProperty name="bd" property="base" value="p1503670" />
 <%
 // Récupération de la connexion
-Connection cnx = dbcnx.getCnx();
+Connection cnx = bd.getConnection();
 if (cnx == null) {
 out.println("<font color=red>Connexion impossible : " + cnx + "</font>");
 } else {

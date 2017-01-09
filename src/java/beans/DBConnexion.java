@@ -1,6 +1,10 @@
 package beans;
 
+import com.mysql.jdbc.exceptions.MySQLDataException;
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DBConnexion implements java.io.Serializable {
 
@@ -8,8 +12,9 @@ public class DBConnexion implements java.io.Serializable {
     private String password;
     private String hostname;
     private String port;
-    private String nomDeLaBase;
+    private String base;
     private Connection cnx;
+    private MysqlDataSource mds;
 
     public void setLogin(String valeur) {
         login = valeur;
@@ -27,35 +32,36 @@ public class DBConnexion implements java.io.Serializable {
         port = valeur;
     }
 
-    public void setNomDeLaBase(String valeur) {
-        nomDeLaBase = valeur;
+    public void setBase(String valeur) {
+        base = valeur;
     }
 
-    public Connection getCnx() {
-        if (etablirConnexion()) {
-            return cnx;
-        } else {
-            return null;
-        }
+    public Connection getConnection() {
+        if (cnx == null) 
+            this.connecter();
+        return cnx;
     }
 
     private String construireUrlJdbc() {
         String urlJdbc;
         urlJdbc = "jdbc:mysql://" + hostname + ":" + port
-                + "/" + nomDeLaBase;
+                + "/" + base;
         urlJdbc = urlJdbc
                 + "?user=" + login + "&password=" + password;
         return urlJdbc;
     }
 
     private boolean etablirConnexion() {
+        /**
+         * DEPRECATED par moi même
+         */
         boolean statusConnexion = false;
         String urlJdbc;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             //urlJdbc=construireUrlJdbc();
 
-            cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/web_app", "root", "");
+            cnx = DriverManager.getConnection("jdbc:mysql://localhost:8081/web_app", "root", "");
             // cnx=DriverManager.getConnection("jdbc:mysql://iutdoua-web.univ-lyon1.fr/p1500700","p1500700","239393"); 
             statusConnexion = true;
         } catch (Exception e) {
@@ -63,5 +69,21 @@ public class DBConnexion implements java.io.Serializable {
             System.out.println(e);
         }
         return statusConnexion;
+    }
+
+    private void connecter() {
+        mds = new MysqlDataSource();
+        mds.setPortNumber(Integer.parseInt(port));
+        mds.setUser(login);
+        mds.setPassword(password);
+        mds.setServerName(hostname);
+        mds.setDatabaseName(base);
+        try {
+            cnx = mds.getConnection();
+        } catch (SQLException e) {
+            System.out.println("Erreur lors de la connexion à la BD MySQL");
+            Logger.getLogger(DBConnexion.class.getName()).log(Level.SEVERE, null, e);
+        }
+        System.out.println("Connexion réussie à la BD MySQL");
     }
 }

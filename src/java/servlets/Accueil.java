@@ -7,9 +7,10 @@ package servlets;
 
 import beans.DBConnexion;
 import beans.DBLien;
-import java.beans.Statement;
+import java.sql.Statement;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,7 +48,7 @@ public class Accueil extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
             DBConnexion conn = new DBConnexion();
-            Connection connexion = cnx.getCnx();
+            Connection connexion = conn.getConnection();
             System.out.println("Appel connexion");
             DBLien lien = new DBLien();
             Statement statement = lien.getLien(connexion);

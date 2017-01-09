@@ -10,7 +10,7 @@
     </servlet>
     <servlet>
         <servlet-name>connexion</servlet-name>
-        <servlet-class>servlets.connexion</servlet-class>
+        <servlet-class>servlets.Connexion</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
@@ -23,7 +23,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>connexion</servlet-name>
-        <url-pattern>/connexion</url-pattern>
+        <url-pattern>/connexionMeh</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>GestionnaireSession</servlet-name>
