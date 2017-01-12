@@ -1,11 +1,11 @@
 package beans;
 
-import java.io.Serializable;
 import java.sql.*;
 
 public class DBLien implements java.io.Serializable {
 
     private Statement lien = null;
+    private boolean statusStatement;
 
     public Statement getLien(Connection cnx) {
         if (construireStatement(cnx)) {
@@ -16,11 +16,11 @@ public class DBLien implements java.io.Serializable {
     }
 
     private boolean construireStatement(Connection cnx) {
-        boolean statusStatement = false;
+        statusStatement = false;
         try {
             lien = cnx.createStatement();
             statusStatement = true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             statusStatement = false;
             System.out.println(e);
         }

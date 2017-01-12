@@ -5,14 +5,9 @@
  */
 package servlets;
 
-import beans.DBConnexion;
-import beans.DBLien;
-import java.sql.Statement;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,8 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Stephane
  */
-@WebServlet(name = "Accueil", urlPatterns = {"/accueil"})
-public class Accueil extends HttpServlet {
+public class Inscription extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,12 +31,7 @@ public class Accueil extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            DBConnexion conn = new DBConnexion();
-            Connection connexion = conn.getConnection();
-            System.out.println("Appel connexion");
-            DBLien lien = new DBLien();
-            Statement statement = lien.getLien(connexion);
-            this.getServletContext().getRequestDispatcher( "/WEB-INF/accueil.jsp" ).forward( request, response );
+            this.getServletContext().getRequestDispatcher( "/WEB-INF/inscription.jsp" ).forward( request, response );
         }
     }
 
