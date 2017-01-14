@@ -14,14 +14,14 @@
         <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
     </head>
     <body>
-        <form method="post" action="connexion.php">
-	<fieldset>
-	<legend>Connexion</legend>
-	<p>
-	<label for="nom">Nom : </label><input name="nom" type="text" id="pseudo" /><br />
-	<label for="password">Mot de Passe : </label><input type="password" name="password" id="password" />
-	</p>
-        <p><input type="submit" value="Connexion" /></p></fieldset></form><br>
+        <form method="post" action="/connexion">
+            <fieldset>
+                <legend>Connexion</legend>
+                <p>
+                    <label for="nom">Nom : </label><input name="nom" type="text" id="pseudo" /><br />
+                    <label for="password">Mot de Passe : </label><input type="password" name="password" id="password" />
+                </p>
+                <p><input type="submit" value="Connexion" /></p></fieldset></form><br>
         <form method="get" action="session">
             <fieldset>
                 <button type="submit" name="action" value="clear">Vider Panier</button><br>
@@ -44,6 +44,6 @@
                 <label><button type="submit" name="ajout" value="virtua_tennis">Ajouter au panier</button></label><br>
             </form>
         </div>
-             
+
     </body>
 </html>

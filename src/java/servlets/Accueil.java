@@ -44,14 +44,14 @@ public class Accueil extends HttpServlet {
             out.println("<title>Servlet Accueil</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Accueil at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Accueil at chips " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
             DBConnexion conn = new DBConnexion();
-            Connection connexion = conn.getConnection();
-            System.out.println("Appel connexion");
+            Connection connexion = conn.getConnection("p1503670", "241429", "3306", "iutdoua-web.univ-lyon1.fr", "p1503670");
             DBLien lien = new DBLien();
             Statement statement = lien.getLien(connexion);
+            request.getSession(true).setAttribute("cnx", conn);
             this.getServletContext().getRequestDispatcher( "/WEB-INF/accueil.jsp" ).forward( request, response );
         }
     }
