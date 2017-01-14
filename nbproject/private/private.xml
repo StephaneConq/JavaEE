@@ -3,30 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/beans/DBConnexion.java</file>
             <file>file:/C:/Users/Stephane/Documents/JavaEE/web/WEB-INF/panier.jsp</file>
+            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/servlets/Connexion.java</file>
+            <file>file:/C:/Users/Stephane/Documents/JavaEE/web/WEB-INF/connexion.jsp</file>
+            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/servlets/GestionnaireSession.java</file>
+            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/beans/Jeu.java</file>
+            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/beans/DBConnexion.java</file>
             <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/beans/DBLien.java</file>
             <file>file:/C:/Users/Stephane/Documents/JavaEE/web/META-INF/context.xml</file>
             <file>file:/C:/Users/Stephane/Documents/JavaEE/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/donnees/Panier.java</file>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/web/WEB-INF/connexion.jsp</file>
             <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/servlets/Accueil.java</file>
             <file>file:/C:/Users/Stephane/Documents/JavaEE/web/WEB-INF/accueil.jsp</file>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/servlets/connexion.java</file>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/servlets/GestionnaireSession.java</file>
-=======
-            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/src/java/servlets/Accueil.java</file>
-            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/web/WEB-INF/panier.jsp</file>
-            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/web/WEB-INF/accueil.jsp</file>
-            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/src/java/servlets/Inscription.java</file>
-            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/web/WEB-INF/inscription.jsp</file>
-            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/src/java/servlets/Connexion.java</file>
-            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/web/WEB-INF/test.html</file>
-            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/src/java/donnees/Panier.java</file>
-            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/web/WEB-INF/connexion.jsp</file>
-            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/src/java/servlets/GestionnaireSession.java</file>
->>>>>>> 86557a608e9d6f257a6beb90a55e1421e6c60f30
+            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/servlets/Inscription.java</file>
+            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/beans/Panier.java</file>
         </group>
     </open-files>
 </project-private>
