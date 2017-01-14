@@ -4,6 +4,8 @@
     Author     : Stephane
 --%>
 
+<%@page import="beans.DBConnexion"%>
+<%@page import="servlets.Connexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-- La page JSP manipule des objets de type Connection et Statement -->
 <%@ page import="java.sql.*" %>
@@ -35,26 +37,26 @@
                 </fieldset>
             </form>
             <div>
-                <jsp:useBean id="dblien" class="beans.DBLien"/>
-                
+                <jsp:useBean id="dblien" class="beans.DBLien"/>   
                 <form action="session" method="get">
                     <%
                     //préparation de la requête
-                    
-                    String commande = "select * from jeu_java";
-                    ResultSet rs;
-                    rs = lien.exeuteQuery(commande);
-                    If(rs != null)
-                    {
-                        while (rs.next()) {
-                            out.println("<a href=\""+rs.getFloat("JEU_IMG")+"\" alt=img "+rs.getString("JEU_NOM")+"><br>");
-                            out.println(rs.getString("JEU_NOM")+"<br>");
-                            out.println(rs.getFloat("JEU_PRIX")+"<br>");
-                            out.println("<label><button type=\"submit\" name=\"ajout\" value=\""+rs.getString("JEU_NOM")+"\">Ajouter au panier</button></label><br>");
+                    Connection cnx = ((DBConnexion) request.getSession().getAttribute("cnx")).getConnection();
+                    Statement st = cnx.createStatement();
+                    st.execute("SELECT * FROM jeu_java;");
+                    ResultSet rset = st.getResultSet();
+                    if(rset != null){
+                        while (rset.next()) {
+                            out.println("<a href=\""+rset.getFloat("JEU_IMG")+"\" alt=img "+rset.getString("JEU_NOM")+"><br>");
+                            out.println(rset.getString("JEU_NOM")+"<br>");
+                            out.println(rset.getFloat("JEU_PRIX")+"<br>");
+                            out.println("<label><button type=\"submit\" name=\"ajout\" value=\""+rset.getString("JEU_NOM")+"\">Ajouter au panier</button></label><br>");
                         }
+                    }
                 %>
                 </form>
             </div>
 
         </body>
+    </jsp:useBean>
     </html>
