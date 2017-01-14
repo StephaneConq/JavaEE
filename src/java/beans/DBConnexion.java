@@ -41,6 +41,17 @@ public class DBConnexion implements java.io.Serializable {
             this.connecter();
         return cnx;
     }
+    
+    public Connection getConnection(String l, String pass, String port, String host, String bd) {
+        this.login = l;
+        this.password = pass;
+        this.port = port;
+        this.hostname = host;
+        this.base = bd;
+        if (cnx == null) 
+            this.connecter();
+        return cnx;
+    }
 
     private String construireUrlJdbc() {
         String urlJdbc;
@@ -80,10 +91,11 @@ public class DBConnexion implements java.io.Serializable {
         mds.setDatabaseName(base);
         try {
             cnx = mds.getConnection();
+            System.out.println("Connexion réussie à la BD MySQL");
         } catch (SQLException e) {
             System.out.println("Erreur lors de la connexion à la BD MySQL");
             Logger.getLogger(DBConnexion.class.getName()).log(Level.SEVERE, null, e);
         }
-        System.out.println("Connexion réussie à la BD MySQL");
+        
     }
 }

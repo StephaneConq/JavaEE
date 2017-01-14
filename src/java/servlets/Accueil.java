@@ -11,6 +11,8 @@ import java.sql.Statement;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,20 +34,23 @@ public class Accueil extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws java.sql.SQLException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        Statement stmt = null;
         try (PrintWriter out = response.getWriter()) {
             DBConnexion conn = new DBConnexion();
-            Connection connexion = conn.getConnection();
-            System.out.println("Appel connexion");
+            Connection connexion = conn.getConnection("p1503670", "241429", "3306", "iutdoua-web.univ-lyon1.fr", "p1503670");
             DBLien lien = new DBLien();
             Statement statement = lien.getLien(connexion);
+            request.getSession(true).setAttribute("cnx", conn);
             this.getServletContext().getRequestDispatcher( "/WEB-INF/accueil.jsp" ).forward( request, response );
+        }catch(Exception e){
+            System.err.println("Erreur");
         }
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -84,5 +89,4 @@ public class Accueil extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }
