@@ -47,7 +47,7 @@
                     ResultSet rset = st.getResultSet();
                     if(rset != null){
                         while (rset.next()) {
-                            out.println("<a href=\""+rset.getFloat("JEU_IMG")+"\" alt=img "+rset.getString("JEU_NOM")+"><br>");
+                            out.println("<img src=\""+rset.getFloat("JEU_IMG")+"\" alt=img "+rset.getString("JEU_NOM")+"><br>");
                             out.println(rset.getString("JEU_NOM")+"<br>");
                             out.println(rset.getFloat("JEU_PRIX")+"<br>");
                             out.println("<label><button type=\"submit\" name=\"ajout\" value=\""+rset.getString("JEU_NOM")+"\">Ajouter au panier</button></label><br>");

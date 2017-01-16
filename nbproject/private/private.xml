@@ -3,20 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/web/WEB-INF/panier.jsp</file>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/servlets/Connexion.java</file>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/web/WEB-INF/connexion.jsp</file>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/beans/Compte.java</file>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/servlets/GestionnaireSession.java</file>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/beans/Jeu.java</file>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/beans/DBConnexion.java</file>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/beans/DBLien.java</file>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/web/META-INF/context.xml</file>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/servlets/Accueil.java</file>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/web/WEB-INF/accueil.jsp</file>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/servlets/Inscription.java</file>
-            <file>file:/C:/Users/Stephane/Documents/JavaEE/src/java/beans/Panier.java</file>
+            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/web/WEB-INF/panier.jsp</file>
+            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/web/WEB-INF/connexion.jsp</file>
+            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/web/WEB-INF/accueil.jsp</file>
+            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/src/java/servlets/Connexion.java</file>
+            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/src/java/servlets/Inscription.java</file>
+            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/src/java/servlets/Accueil.java</file>
+            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/web/WEB-INF/inscription.jsp</file>
+            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/src/java/servlets/GestionnaireSession.java</file>
+            <file>file:/C:/Users/kitan/OneDrive/Documents/JavaEE/web/WEB-INF/test.html</file>
         </group>
     </open-files>
 </project-private>
